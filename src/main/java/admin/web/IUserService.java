@@ -1,7 +1,7 @@
 package admin.web;
  
 import admin.domain.User;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 
 public interface IUserService {

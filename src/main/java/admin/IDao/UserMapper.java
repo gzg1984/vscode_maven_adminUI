@@ -2,7 +2,7 @@ package admin.IDao;
 
 import java.util.List;
 
-import admin.domain.Navigation;
+//import admin.domain.Navigation;
 import admin.domain.User;
 
 public interface UserMapper {

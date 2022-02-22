@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  
 import admin.IDao.UserMapper;
 import admin.domain.User;
-import admin.web.IUserService;
+//import admin.web.IUserService;
  
 @Service("userService")
 public class UserServiceImpl implements IUserService {

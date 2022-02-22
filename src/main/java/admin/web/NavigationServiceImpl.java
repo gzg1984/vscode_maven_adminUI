@@ -1,9 +1,4 @@
-/* 
- * Copyright © 2016 GenesisDo 
- * 延边创为软件开发有限公司
- * http://www.genesisdo.com
- * All rights reserved. 
- */ 
+
 package admin.web;
 
 import java.util.ArrayList;
@@ -11,12 +6,12 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import admin.IDao.*;
 import admin.domain.*;
-import admin.web.INavigationService;
+//import admin.web.INavigationService;
 //import com.genesisdo.web.IMap;
 
 @Service("navigationServiceImpl")

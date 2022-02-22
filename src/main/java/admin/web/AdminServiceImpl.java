@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import admin.IDao.AdminMapper;
 import admin.domain.Admin;
-import admin.web.IAdminService;
+//import admin.web.IAdminService;
 import java.security.MessageDigest;
 
 @Service("adminServiceImpl")
