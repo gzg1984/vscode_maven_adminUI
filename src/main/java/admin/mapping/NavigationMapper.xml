@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin.IDao.NavigationMapper">
+  <resultMap id="BaseResultMap" type="admin.domain.Navigation">
+    <id column="navigation_id" jdbcType="INTEGER" property="navigationId" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="nav_type" jdbcType="VARCHAR" property="navType" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="short_title" jdbcType="VARCHAR" property="shortTitle" />
+    <result column="icon_class" jdbcType="VARCHAR" property="iconClass" />
+    <result column="link_url" jdbcType="VARCHAR" property="linkUrl" />
+    <result column="nav_name" jdbcType="VARCHAR" property="navName" />
+    <result column="is_use" jdbcType="INTEGER" property="isUse" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="action_type" jdbcType="VARCHAR" property="actionType" />
+    <result column="l_order" jdbcType="INTEGER" property="lOrder" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    navigation_id, parent_id, nav_type, title, short_title, icon_class, link_url, nav_name, 
+    is_use, remark, action_type, l_order
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from navigation
+    where navigation_id = #{navigationId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from navigation
+    where navigation_id = #{navigationId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="admin.domain.Navigation">
+    insert into navigation (navigation_id, parent_id, nav_type, 
+      title, short_title, icon_class, 
+      link_url, nav_name, is_use, 
+      remark, action_type, l_order
+      )
+    values (#{navigationId,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{navType,jdbcType=VARCHAR}, 
+      #{title,jdbcType=VARCHAR}, #{shortTitle,jdbcType=VARCHAR}, #{iconClass,jdbcType=VARCHAR}, 
+      #{linkUrl,jdbcType=VARCHAR}, #{navName,jdbcType=VARCHAR}, #{isUse,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{actionType,jdbcType=VARCHAR}, #{lOrder,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="admin.domain.Navigation">
+    insert into navigation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="navigationId != null">
+        navigation_id,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="navType != null">
+        nav_type,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="shortTitle != null">
+        short_title,
+      </if>
+      <if test="iconClass != null">
+        icon_class,
+      </if>
+      <if test="linkUrl != null">
+        link_url,
+      </if>
+      <if test="navName != null">
+        nav_name,
+      </if>
+      <if test="isUse != null">
+        is_use,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="actionType != null">
+        action_type,
+      </if>
+      <if test="lOrder != null">
+        l_order,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="navigationId != null">
+        #{navigationId,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="navType != null">
+        #{navType,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="shortTitle != null">
+        #{shortTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="iconClass != null">
+        #{iconClass,jdbcType=VARCHAR},
+      </if>
+      <if test="linkUrl != null">
+        #{linkUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="navName != null">
+        #{navName,jdbcType=VARCHAR},
+      </if>
+      <if test="isUse != null">
+        #{isUse,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="actionType != null">
+        #{actionType,jdbcType=VARCHAR},
+      </if>
+      <if test="lOrder != null">
+        #{lOrder,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="admin.domain.Navigation">
+    update navigation
+    <set>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="navType != null">
+        nav_type = #{navType,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="shortTitle != null">
+        short_title = #{shortTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="iconClass != null">
+        icon_class = #{iconClass,jdbcType=VARCHAR},
+      </if>
+      <if test="linkUrl != null">
+        link_url = #{linkUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="navName != null">
+        nav_name = #{navName,jdbcType=VARCHAR},
+      </if>
+      <if test="isUse != null">
+        is_use = #{isUse,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="actionType != null">
+        action_type = #{actionType,jdbcType=VARCHAR},
+      </if>
+      <if test="lOrder != null">
+        l_order = #{lOrder,jdbcType=INTEGER},
+      </if>
+    </set>
+    where navigation_id = #{navigationId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="admin.domain.Navigation">
+    update navigation
+    set parent_id = #{parentId,jdbcType=INTEGER},
+      nav_type = #{navType,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      short_title = #{shortTitle,jdbcType=VARCHAR},
+      icon_class = #{iconClass,jdbcType=VARCHAR},
+      link_url = #{linkUrl,jdbcType=VARCHAR},
+      nav_name = #{navName,jdbcType=VARCHAR},
+      is_use = #{isUse,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      action_type = #{actionType,jdbcType=VARCHAR},
+      l_order = #{lOrder,jdbcType=INTEGER}
+    where navigation_id = #{navigationId,jdbcType=INTEGER}
+  </update>
+  
+  	<select id="getNavigationList"  resultMap="BaseResultMap">
+		SELECT
+			navigation_id,
+			parent_id,
+			nav_type,
+			title,
+			short_title,
+			icon_class,
+			link_url,
+			nav_name,
+			is_use,
+			remark,
+			action_type
+		FROM
+			navigation
+		WHERE
+			is_use=1
+	<!-- 	<choose>
+			<when test="parentId != null">
+				AND parent_id=#{parentId,jdbcType=INTEGER}
+			</when>
+			<otherwise>
+				AND parent_id=0
+			</otherwise>
+		</choose> -->
+		ORDER BY l_order ASC
+	</select>
+	<!-- <select id="getNavigationListByRole" parameterType="com.genesisdo.web.IMap" resultMap="Navigation">
+		SELECT
+			n.navigation_id,
+			n.parent_id,
+			n.nav_type,
+			n.title,
+			n.short_title,
+			n.icon_class,
+			n.link_url,
+			n.nav_name,
+			n.is_use,
+			n.remark,
+			n.action_type
+		FROM
+			navigation n
+		LEFT JOIN role_value r ON r.nav_name=n.nav_name
+		WHERE r.action_type='Show' AND n.is_use=1
+		AND  r.role_id =#{roleId,jdbcType=INTEGER} -->
+	<!-- 	<choose>
+			<when test="parentId != null">
+				AND n.parent_id=#{parentId,jdbcType=INTEGER}
+			</when>
+			<otherwise>
+				AND n.parent_id=0
+			</otherwise>
+		</choose> -->
+	<!-- 	ORDER BY n.l_order ASC
+	</select>-->
+  
+  
+</mapper>

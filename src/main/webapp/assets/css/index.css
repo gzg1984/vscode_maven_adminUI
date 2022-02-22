@@ -1,0 +1,194 @@
+.explore-box{
+	height: 180px;
+	width: 375px;
+	border: 2px dashed #c6c6c6;
+	display: inline-block;
+	float: left;
+}
+.explore-box h3{
+	text-align: center;
+	padding: 0px 55px;
+	margin-top:20px ;
+	line-height: 32px;
+	margin-bottom: 40px;
+}
+.explore-box>p{
+	text-align: center;
+}
+.index-project-box .nav-tabs>li>a{
+	padding: 7px 15px;
+}
+#commented .index-project-list li a{
+	display:inline-block;
+	width:50%;
+	overflow: hidden;
+}
+#commented .index-project-list li a.file-name{
+	color:#666;
+	
+}
+
+.index-project-box{
+	height: 180px;
+	width: 375px;
+	float: right;
+	border-bottom: 1px solid #c6c6c6;
+	/*border-top-right-radius: 4px;
+	border-top-left-radius: 4px;*/
+}
+.index-project-box .tab-content{
+	height: 143px;
+	border-left: 1px solid #c6c6c6;
+	border-right: 1px solid #c6c6c6;
+}
+.index-project-box .nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover {
+    border: 1px solid #c6c6c6;
+    border-bottom: 1px solid #fff;
+    color:#d56464 ;
+}
+.index-project-box .nav-tabs>li:not(.active)>a{
+	background-color: #eee;
+}
+.index-project-box .nav-tabs>li .badge{
+	margin-left: 15px;
+}
+.index-project-box .nav-tabs>li{
+	width: 50%;
+	text-align: center;
+}
+.index-project-box .nav-tabs>li:last-child a{
+	margin-right: 0px;
+}
+.nav-tabs>li.active>a{
+	color:#d56464 ;
+}
+
+.index-login-box{
+	height: 180px;
+	width: 375px;
+	float: right;
+	
+	border: 1px solid #c6c6c6;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.index-login-box p.input-control{
+	margin: 0px;
+	height: 38px;
+	border-bottom: 1px solid #c6c6c6;
+	position: relative;
+}
+.index-login-box p.input-control .glyphicon {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 20px;
+    margin-left: 10px;
+    color: #b8b9b8;
+    
+}
+.index-login-box p.input-control input{
+	background-color: transparent;
+	border: none;
+	outline-color: transparent;
+	font-size:13px;
+	height: 24px;
+	line-height: 24px;
+	position: absolute;
+	left: 40px;
+	top:6px;
+	color: #b8b9b8;
+	width: 190px;
+}
+.index-login-box p.forgot{
+	font-size:14px;
+	text-align: right;
+	padding-right: 20px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+.index-login-box p.login-btn{
+	text-align: center;
+}
+.index-login-box #btnLogin{
+	width: 90%;
+}
+.box-head{
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	width: 100%;
+	color:#333 ;
+	border-bottom: 1px solid #c6c6c6;
+}
+.box-head>.box-head-item{
+	display: table-cell;
+	width: 1%;
+	text-align: center;
+}
+.index-project-list {
+	list-style: none;
+	padding: 0;
+	margin: 0px;
+	height:116px;
+	overflow: hidden;
+}
+.index-project-list>li{
+	padding: 3px 10px;
+	border-bottom: 1px solid #c6c6c6;
+	cursor: pointer;
+}
+.index-project-list+p.more{
+	padding: 3px 10px;
+	text-align: right;
+	margin: 0px;
+}
+.index-project-list>li i{
+	margin-right: 10px;
+}
+
+.hot-project>div{
+	width: 48%;
+	margin:20px 1% 0px 1%;
+	float: left;
+	height: 145px;
+	background-color: #fafafa;
+	box-shadow: 0 1px 6px #ccc;
+	padding:15px 20px 5px 20px;
+	
+}
+.hot-project.file>div{
+	height: auto;
+}
+.hot-project.file>div .half-title a{
+	display:block;
+	width:50%;
+	overflow:hidden;
+	float:left
+}
+.hot-project>div:hover{
+	transform:scale(1.05);
+	background-color: #fff;
+}
+.hot-project>div a.red-title,
+.hot-project>div .red-title a{
+	color: #d56464;
+	font-size: 12px;
+}
+.hot-project>div .red-title a>.glyphicon{
+	float: right;
+	font-size: 16px;
+	cursor: pointer;
+}
+.hot-project>div .gray-content{
+	color: #a4a3a3;
+	font-size: 12px;
+	min-height: 67px;
+	overflow: hidden;
+}
+#loginForm label.error{
+	float:right;
+	margin-top:6px;
+	color: #da6262;
+}

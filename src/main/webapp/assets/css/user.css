@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+body{
+	background-color:#fafafa;
+}
+.user-info{
+	width:100%;
+	position:relative;
+	padding:10px;
+	background-color:#fefefe;
+	height:120px;
+}
+.avatar-wrapper-big{
+	width:80px;
+	height:80px;
+	border-radius:50%;
+	overflow:hidden;
+	position:absolute;
+	left:10px;
+}
+
+.avatar-wrapper-big img{
+	height:100%;
+}
+.user-info div.text{
+	position:absolute;
+	margin-left:100px;
+}

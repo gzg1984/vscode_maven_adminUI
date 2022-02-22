@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin.IDao.AdminMapper">
+  <resultMap id="BaseResultMap" type="admin.domain.Admin">
+    <id column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="is_super" jdbcType="CHAR" property="isSuper" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    admin_id, username, password, create_time, is_super
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </select>
+  
+    <select id="getAllAdmin"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_admin
+  </select>
+  
+  
+  <select id="getAdminVOList"  resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_admin
+    where username = #{username,jdbcType=VARCHAR} 
+    and password = #{password,jdbcType=VARCHAR} 
+  </select>
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="admin.domain.Admin">
+    insert into tb_admin (admin_id, username, password, 
+      create_time, is_super)
+    values (#{adminId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{isSuper,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="admin.domain.Admin">
+    insert into tb_admin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="adminId != null">
+        admin_id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="isSuper != null">
+        is_super,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="adminId != null">
+        #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSuper != null">
+        #{isSuper,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="admin.domain.Admin">
+    update tb_admin
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSuper != null">
+        is_super = #{isSuper,jdbcType=CHAR},
+      </if>
+    </set>
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="admin.domain.Admin">
+    update tb_admin
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      is_super = #{isSuper,jdbcType=CHAR}
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </update>
+</mapper>
